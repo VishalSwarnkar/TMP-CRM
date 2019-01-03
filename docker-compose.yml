@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  integration-test:
+    container_name: app-integration-test
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/home/node/app'
+    working_dir: '/home/node/app/ClientApp'
+    ports:
+      - '4200:4200'
