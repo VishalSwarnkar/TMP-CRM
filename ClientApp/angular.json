@@ -103,7 +103,7 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "./protractor.conf.js",
+            "protractorConfig": "./e2e/config/protractor.conf.js",
             "devServerTarget": "TMP_CRM:serve"
           }
         },
