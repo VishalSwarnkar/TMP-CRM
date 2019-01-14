@@ -1,4 +1,4 @@
-import {browser, by, key, ElementFinder, ExpectedConditions} from 'protractor';
+import {browser, by, element, Key, ElementFinder, ExpectedConditions} from 'protractor';
 
 export class CommonPageHelper {
 
@@ -31,5 +31,19 @@ export class CommonPageHelper {
      browser.wait(ExpectedConditions.elementToBeClickable(item));
      return item.click();
   }
+
+  public async sendKeys(item: ElementFinder, data: string) {
+     browser.wait(ExpectedConditions.visibilityOf (item));
+     return item.sendKeys(data);
+  }
+
+  public async selectDroplist(item: ElementFinder, data: string) {
+    browser.wait(ExpectedConditions.visibilityOf (item));
+    //logic here
+ }
+
+ public async getElementText(item: ElementFinder) {
+   return item.getText();
+ }
 
 }
