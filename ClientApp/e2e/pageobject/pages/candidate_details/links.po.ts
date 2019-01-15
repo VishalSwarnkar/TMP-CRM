@@ -8,7 +8,7 @@ let uploadButton = element(by.css(''));
 let addNewButton = element(by.css(''));
 
 
-export class LatestAddress {
+export class Links {
 
     uploadCandidateResume(){
         common.click(editIcon);
