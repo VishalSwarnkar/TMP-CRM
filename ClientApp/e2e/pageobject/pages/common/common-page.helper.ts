@@ -1,4 +1,5 @@
-import {browser, by, key, ElementFinder, ExpectedConditions} from 'protractor';
+import {browser,element,protractor,by, Key, ElementFinder, ExpectedConditions} from 'protractor';
+
 
 export class CommonPageHelper {
 
@@ -6,11 +7,11 @@ export class CommonPageHelper {
     return browser.get('/');
   }
 
-  public async getMainHeading() {
-    return element(by.css('app-root h1')).getText();
+  public async getText(locator) {
+    return element(locator).getText();
   }
 
-  public async selectNextKey() {
+public async selectNextKey() {
     return browser.actions().sendKeys(Key.ARROW_RIGHT).perform();
   }
 
@@ -31,5 +32,25 @@ export class CommonPageHelper {
      browser.wait(ExpectedConditions.elementToBeClickable(item));
      return item.click();
   }
+
+  public async isPresent(locator: ElementFinder){
+    var myElement = element(locator);
+    expect(myElement.isPresent());
+  }
+
+  public async sendKeys(locator: ElementFinder, value:string){
+    var myElement = element(locator);
+    myElement.sendKeys(value);
+  }
+
+  public async waitForElement(locator: ElementFinder, ms: number) {
+    var myElement = element(locator);
+    var until = protractor.ExpectedConditions;
+    browser.wait(until.presenceOf(myElement), ms, 'Element taking too long to appear in the DOM');
+  }
+
+
+
+
 
 }
