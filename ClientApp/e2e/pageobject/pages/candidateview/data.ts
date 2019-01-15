@@ -1,5 +1,5 @@
 module.exports = {
-    "candidateinfo":{
+    "info":{
     "firstName": "",
     "lastName" : "",
     "currentPosition":"",
