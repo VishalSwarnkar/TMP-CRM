@@ -38,7 +38,7 @@ export class LatestAddress {
         common.getElementText(country);
     }
 
-    setCandidateAddress(data){
+    editCandidateAddress(data){
         common.click(editIcon);
         common.sendKeys(address_line1, data.address_line1);
         common.sendKeys(address_line2, data.address_line2);
