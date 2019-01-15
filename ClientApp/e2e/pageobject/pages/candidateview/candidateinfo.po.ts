@@ -1,7 +1,7 @@
 import { helper } from '../common/common-page.helper';
 import {locator} from "./locator"
 
-export.class Hero {
+export.class CandidateInfo {
 
      verifyCandidateInfo(){
      helper.isPresent(locator.firstName);

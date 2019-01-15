@@ -49,8 +49,4 @@ public async selectNextKey() {
     browser.wait(until.presenceOf(myElement), ms, 'Element taking too long to appear in the DOM');
   }
 
-
-
-
-
 }
