@@ -12,7 +12,7 @@ beforeEach(() => {
 });
 
 
-describe('Verify Candidate Edit => Candidate info section', () => {
+describe('Verify user is able to update candidate view page', () => {
  
   it('should able to update Candidate Info section', () => {
      candidateView.setCandidateInfo(data.info);

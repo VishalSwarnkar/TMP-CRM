@@ -11,9 +11,9 @@ beforeEach(() => {
   page.navigateTo();
 });
 
-describe('Verify Candidate View => Candidate info section', () => {
+describe('Verify Candidate View fields are displayed properly', () => {
  
-  it('should displayed all fields in Candidate Info section', () => {
+  it('should displayed all fields in candidate Info section', () => {
     expect(candidateView.isPresent("firstName")).toBeTruthy();
     expect(candidateView.isPresent("lastName")).toBeTruthy();
     expect(candidateView.isPresent("currentPosition")).toBeTruthy();
