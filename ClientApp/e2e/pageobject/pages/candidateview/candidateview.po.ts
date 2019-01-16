@@ -2,23 +2,15 @@ import { helper } from '../common/common-page.helper';
 import {locator} from "./locator"
 
 export class CandidateInfo {
-    isPresent(element){
-       return helper.isPresent(element);
+    isPresent(elementName:string){
+     helper.isPresent(locator.details[elementName]);
     }
 
-    getCandidateInfoElements(){
-       return locator.info;       
+   getText(elementName:string){
+      return helper.getText(locator.details[elementName]);
     }
 
-    getCommunicationElements(){
-      return locator.communication();       
-   }
-
-    getText(element){
-      return helper.getText(element);
-    }
-
-    setCandidateInfo(data){
+   setCandidateInfo(data){
          helper.sendKeys(locator.editFirstName, data.firstName);
          helper.sendKeys(locator.editLastName, data.lastName);
          helper.sendKeys(locator.editCurrentPosition, data.currentPosition);
