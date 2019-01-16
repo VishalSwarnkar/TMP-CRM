@@ -4,7 +4,7 @@ let locator = require("./locator");
 
 let helper: CommonPageHelper;
 
-export class CandidateInfo {
+export class CandidateView {
 
     helper = new CommonPageHelper();
 

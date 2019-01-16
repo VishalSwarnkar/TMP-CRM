@@ -1,14 +1,14 @@
 import { AppPage } from '../pageobject/app.po';
-import { CandidateInfo } from '../pageobject/pages/candidateview/candidateview.po';
+import { CandidateView } from '../pageobject/pages/candidateview/candidateview.po';
 
 let data = require("../pageobject/pages/candidateview/data");
 
 let page: AppPage;
-let candidateView: CandidateInfo;
+let candidateView: CandidateView;
 
 beforeEach(() => {
   page = new AppPage();
-  candidateView = new CandidateInfo();
+  candidateView = new CandidateView();
   page.navigateTo();
 });
 
