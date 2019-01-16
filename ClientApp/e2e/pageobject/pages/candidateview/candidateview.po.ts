@@ -7,7 +7,7 @@ export class CandidateInfo {
     }
 
     getCandidateInfoElements(){
-       return locator.info();       
+       return locator.info;       
     }
 
     getCommunicationElements(){
