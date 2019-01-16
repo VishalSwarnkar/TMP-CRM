@@ -1,7 +1,6 @@
 import { CommonPageHelper } from '../common/common-page.helper';
 
-let locator = require("./locator");
-
+let locator = require("../property/locator");
 let helper: CommonPageHelper;
 
 export class CandidateView {

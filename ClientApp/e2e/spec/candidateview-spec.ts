@@ -1,8 +1,7 @@
 import { AppPage } from '../pageobject/app.po';
 import { CandidateView } from '../pageobject/pages/candidateview/candidateview.po';
 
-let data = require("../pageobject/pages/candidateview/data");
-
+let data = require("../property/data");
 let page: AppPage;
 let candidateView: CandidateView;
 
