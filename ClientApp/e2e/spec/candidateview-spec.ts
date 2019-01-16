@@ -19,19 +19,19 @@ beforeEach(() => {
 });
 
 describe('Verify Candidate View => Candidate info section', () => {
-  
+ 
   it('should displayed all fields in Candidate Info section', () => {
-    expect(candidateView.isPresent(candidateInfoElement.firstName)).toBeTruthy();
-    expect(candidateView.isPresent(candidateInfoElement.lastName)).toBeTruthy();
-    expect(candidateView.isPresent(candidateInfoElement.currentPosition)).toBeTruthy();
-    expect(candidateView.isPresent(candidateInfoElement.currentCompany)).toBeTruthy();
-    expect(candidateView.isPresent(candidateInfoElement.location)).toBeTruthy();
+    expect(candidateView.isPresent("firstName")).toBeTruthy();
+    expect(candidateView.isPresent("lastName")).toBeTruthy();
+    expect(candidateView.isPresent("currentPosition")).toBeTruthy();
+    expect(candidateView.isPresent("currentCompany")).toBeTruthy();
+    expect(candidateView.isPresent("location")).toBeTruthy();
   });
 
   it('should displayed all fields in communication section', () => {
-    expect( candidateView.getText(communicationElement.mobileNumber)).toEqual(data.mobileNumber);
-    expect( candidateView.getText(communicationElement.textNumber)).toEqual(data.mobileNumber);
-    expect( candidateView.getText(communicationElement.email)).toEqual(data.email);
+    expect( candidateView.getText("mobileNumber")).toEqual(data.mobileNumber);
+    expect( candidateView.getText("textNumber")).toEqual(data.mobileNumber);
+    expect( candidateView.getText("email")).toEqual(data.email);
   });
 });
 

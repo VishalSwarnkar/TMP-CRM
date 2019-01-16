@@ -33,20 +33,16 @@ public async selectNextKey() {
      return item.click();
   }
 
-  public async isPresent(locator: ElementFinder){
-    var myElement = element(locator);
-    expect(myElement.isPresent());
+  public async isPresent(element: ElementFinder){
+    expect(element.isPresent());
   }
 
-  public async sendKeys(locator: ElementFinder, value:string){
-    var myElement = element(locator);
-    myElement.sendKeys(value);
+  public async sendKeys(element: ElementFinder, value:string){
+    element.sendKeys(value);
   }
 
-  public async waitForElement(locator: ElementFinder, ms: number) {
-    var myElement = element(locator);
-    var until = protractor.ExpectedConditions;
-    browser.wait(until.presenceOf(myElement), ms, 'Element taking too long to appear in the DOM');
+  public async waitForElement(element: ElementFinder, ms: number) {
+    browser.wait(ExpectedConditions.presenceOf(element), ms, 'Element taking too long to appear in the DOM')
   }
 
 }

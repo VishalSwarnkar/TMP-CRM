@@ -1,13 +1,11 @@
 module.exports = {
-    "info":{
+    "details":{
     "firstName": "test",
     "lastName" : "",
     "currentPosition":"",
     "currentCompany":"",
     "location":"",
     "checkIcon":"",
-    },
-    "communicaion":{
-
-    }
+   
+},
 };

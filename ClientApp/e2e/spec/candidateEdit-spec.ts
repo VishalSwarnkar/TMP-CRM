@@ -23,18 +23,18 @@ describe('Verify Candidate Edit => Candidate info section', () => {
  
   it('should able to update Candidate Info section', () => {
      candidateView.setcandidateView(data.info);
-     expect( candidateView.getText(candidateInfoElement.firstName)).toEqual(data.firstName);
-     expect( candidateView.getText(candidateInfoElement.lastName)).toEqual(data.lastName);
-     expect( candidateView.getText(candidateInfoElement.currentPosition)).toEqual(data.currentPosition);
-     expect( candidateView.getText(candidateInfoElement.currentCompany)).toEqual(data.currentCompany);
-     expect( candidateView.getText(candidateInfoElement.location)).toEqual(data.location);
+     expect( candidateView.getText("firstName")).toEqual(data.firstName);
+     expect( candidateView.getText("lastName")).toEqual(data.lastName);
+     expect( candidateView.getText("currentPosition")).toEqual(data.currentPosition);
+     expect( candidateView.getText("currentCompany")).toEqual(data.currentCompany);
+     expect( candidateView.getText("location")).toEqual(data.location);
   });
 
   it('should able to update Communication section', () => {
     candidateView.setcandidateView(data.info);
-    expect( candidateView.getText(communicationElement.mobileNumber)).toEqual(data.mobileNumber);
-    expect( candidateView.getText(communicationElement.textNumber)).toEqual(data.textNumber);
-    expect( candidateView.getText(communicationElement.email)).toEqual(data.email);
+    expect( candidateView.getText("mobileNumber")).toEqual(data.mobileNumber);
+    expect( candidateView.getText("textNumber")).toEqual(data.textNumber);
+    expect( candidateView.getText("email")).toEqual(data.email);
  });
 
 });
