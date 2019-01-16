@@ -6,11 +6,11 @@ export class CommonPageHelper {
     return browser.get('/');
   }
 
-  public async getMainHeading() {
-    return element(by.css('app-root h1')).getText();
+  public async getText(locator) {
+    return element(locator).getText();
   }
 
-  public async selectNextKey() {
+public async selectNextKey() {
     return browser.actions().sendKeys(Key.ARROW_RIGHT).perform();
   }
 
@@ -42,8 +42,10 @@ export class CommonPageHelper {
     //logic here
  }
 
- public async getElementText(item: ElementFinder) {
-   return item.getText();
- }
-
+  public async isPresent(element: ElementFinder){
+    expect(element.isPresent());
+  }
+  public async waitForElement(element: ElementFinder, ms: number = 5000) {
+    browser.wait(ExpectedConditions.presenceOf(element), ms, 'Element taking too long to appear in the DOM')
+  }
 }
