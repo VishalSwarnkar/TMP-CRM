@@ -1,7 +1,13 @@
-import { helper } from '../common/common-page.helper';
-import {locator} from "./locator"
+import { CommonPageHelper } from '../common/common-page.helper';
+
+let locator = require("./locator");
+
+let helper: CommonPageHelper;
 
 export class CandidateInfo {
+
+    helper = new CommonPageHelper();
+
     isPresent(elementName:string){
      helper.isPresent(locator.details[elementName]);
     }
@@ -19,4 +25,4 @@ export class CandidateInfo {
          helper.click(locator.checkicon);
          helper.waitForElement(locator.firstName, 500);
     }
-}
+};

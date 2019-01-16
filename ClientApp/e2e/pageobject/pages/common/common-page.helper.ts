@@ -1,5 +1,4 @@
-import {browser,element,protractor,by, Key, ElementFinder, ExpectedConditions} from 'protractor';
-
+import {browser, by, element, Key, ElementFinder, ExpectedConditions} from 'protractor';
 
 export class CommonPageHelper {
 
@@ -33,16 +32,20 @@ public async selectNextKey() {
      return item.click();
   }
 
+  public async sendKeys(item: ElementFinder, data: string) {
+     browser.wait(ExpectedConditions.visibilityOf (item));
+     return item.sendKeys(data);
+  }
+
+  public async selectDroplist(item: ElementFinder, data: string) {
+    browser.wait(ExpectedConditions.visibilityOf (item));
+    //logic here
+ }
+
   public async isPresent(element: ElementFinder){
     expect(element.isPresent());
   }
-
-  public async sendKeys(element: ElementFinder, value:string){
-    element.sendKeys(value);
-  }
-
-  public async waitForElement(element: ElementFinder, ms: number) {
+  public async waitForElement(element: ElementFinder, ms: number = 5000) {
     browser.wait(ExpectedConditions.presenceOf(element), ms, 'Element taking too long to appear in the DOM')
   }
-
 }

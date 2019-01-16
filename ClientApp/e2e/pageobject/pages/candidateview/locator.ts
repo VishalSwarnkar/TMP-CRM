@@ -2,10 +2,9 @@ module.exports = {
     "details":{
     "firstName": "test",
     "lastName" : "",
-    "currentPosition":"",
-    "currentCompany":"",
-    "location":"",
-    "checkIcon":"",
-   
-},
+    "currentPosition": "",
+    "currentCompany": "",
+    "location": "",
+    "checkIcon": ""
+   }
 };
