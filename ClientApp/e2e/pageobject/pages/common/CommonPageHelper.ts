@@ -34,7 +34,7 @@ export class CommonPageHelper {
   }
 
   public async click(elementName:string) {
-     item = element(this.locator);
+     item = element(this.locator[elementName]);
      browser.wait(ExpectedConditions.elementToBeClickable(item));
      return item.click();
   }
