@@ -1,4 +1,5 @@
 import { browser, by, element, Key } from 'protractor';
+import {protractorImageComparison} from 'protractor-image-comparison'
 
 export class AppPage {
   navigateTo() {
@@ -19,5 +20,9 @@ export class AppPage {
 
   selectEscapeKey() {
     browser.actions().sendKeys(Key.ESCAPE).perform();
+  }
+
+  compareScreen() {
+    return browser.protractorImageComparison.checkScreen('examplePage');
   }
 }

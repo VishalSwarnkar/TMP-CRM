@@ -3,6 +3,7 @@
 
 const { SpecReporter } = require('jasmine-spec-reporter');
 var HtmlReporter = require('protractor-beautiful-reporter');
+const protractorImageComparison = require('protractor-image-comparison');
 
 exports.config = {
   allScriptsTimeout: 11000,
@@ -27,6 +28,18 @@ exports.config = {
     require('ts-node').register({
       project: 'e2e/config/tsconfig.e2e.json'
     });
+    browser.protractorImageComparison = new protractorImageComparison(
+      {   
+          autoSaveBaseline: true,
+          baselineFolder: 'e2e/path/baseline/',
+          screenshotPath: 'e2e/path/actual_screenshots/',
+          debug: true,
+          disableCSSAnimation: true,
+          nativeWebScreenshot: true,
+          blockOutStatusBar: true,
+          ignoreColors: true
+      }
+  );
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
     jasmine.getEnv().addReporter(new HtmlReporter({
            baseDirectory: 'tmp/screenshots'
