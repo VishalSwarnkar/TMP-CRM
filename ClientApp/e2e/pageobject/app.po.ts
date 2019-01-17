@@ -1,8 +1,10 @@
 import { browser, by, element, Key } from 'protractor';
+let pagePath = "pageobject/pages";
 
 export class AppPage {
-  navigateTo() {
-    return browser.get('/');
+  navigateTo(pageName:string) {
+     browser.get('/${pagePath}'+pageName);
+     return require('../../'+pageName)
   }
 
   getMainHeading() {

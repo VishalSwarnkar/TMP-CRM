@@ -7,9 +7,7 @@ let candidateView: CandidateView;
 
 beforeEach(() => {
   page = new AppPage();
-  candidateView = new CandidateView();
-  page.navigateTo();
-
+  candidateView = page.navigateTo("pagename");
 });
 
 
