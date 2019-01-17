@@ -1,16 +1,22 @@
 import {browser, by, element, Key, ElementFinder, ExpectedConditions} from 'protractor';
 
+let item;
+
 export class CommonPageHelper {
+  locator:Object;
+  constructor(locator){
+    this.locator=locator;
+  }
 
   public navigateTo() {
     return browser.get('/');
   }
 
-  public async getText(locator) {
-    return element(locator).getText();
+  public async getText(elementName:string) {
+   return element(this.locator).getText();
   }
 
-public async selectNextKey() {
+  public async selectNextKey() {
     return browser.actions().sendKeys(Key.ARROW_RIGHT).perform();
   }
 
@@ -27,23 +33,23 @@ public async selectNextKey() {
       return browser.get(url);
   }
 
-  public async click(item: ElementFinder) {
+  public async click(elementName:string) {
+     item = element(this.locator);
      browser.wait(ExpectedConditions.elementToBeClickable(item));
      return item.click();
   }
 
   public async sendKeys(item: ElementFinder, data: string) {
-     browser.wait(ExpectedConditions.visibilityOf (item));
-     return item.sendKeys(data);
+    browser.wait(ExpectedConditions.visibilityOf (item));
+    return item.sendKeys(data);
   }
 
   public async selectDroplist(item: ElementFinder, data: string) {
     browser.wait(ExpectedConditions.visibilityOf (item));
-    //logic here
  }
 
-  public async isPresent(element: ElementFinder){
-    expect(element.isPresent());
+  public async isPresent(elementName: string){
+    return this.locator[elementName].isPresent();
   }
   public async waitForElement(element: ElementFinder, ms: number = 5000) {
     browser.wait(ExpectedConditions.presenceOf(element), ms, 'Element taking too long to appear in the DOM')

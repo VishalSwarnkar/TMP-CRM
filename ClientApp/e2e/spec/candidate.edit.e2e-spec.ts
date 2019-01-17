@@ -9,12 +9,14 @@ beforeEach(() => {
   page = new AppPage();
   candidateView = new CandidateView();
   page.navigateTo();
+
 });
 
 
 describe('Verify user is able to update candidate view page', () => {
  
   it('should able to update Candidate Info section', () => {
+     candidateView.click("pencilicon");
      candidateView.setCandidateInfo(data.info);
      expect( candidateView.getText("firstName")).toEqual(data.firstName);
      expect( candidateView.getText("lastName")).toEqual(data.lastName);
@@ -24,6 +26,7 @@ describe('Verify user is able to update candidate view page', () => {
   });
 
   it('should able to update Communication section', () => {
+    candidateView.click("pencilicon");
     candidateView.setCandidateInfo(data.info);
     expect( candidateView.getText("mobileNumber")).toEqual(data.mobileNumber);
     expect( candidateView.getText("textNumber")).toEqual(data.textNumber);

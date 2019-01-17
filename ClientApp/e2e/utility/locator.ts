@@ -1,6 +1,6 @@
 module.exports = {
     "details":{
-    "firstName": "test",
+    "firstName": "",
     "lastName" : "",
     "currentPosition": "",
     "currentCompany": "",
