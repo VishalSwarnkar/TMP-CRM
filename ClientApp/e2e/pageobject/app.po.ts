@@ -3,8 +3,8 @@ let pagePath = "pageobject/pages";
 
 export class AppPage {
   navigateTo(pageName:string) {
-     browser.get('/${pagePath}'+pageName);
-     return require('../../'+pageName)
+     browser.get('/${pagePath}/${pageName}');
+     return require('../${pagePath}/${pageName}/${pageName}')
   }
 
   getMainHeading() {
