@@ -4,14 +4,11 @@ let item;
 
 export class CommonPageHelper {
   locator:Object;
+
   constructor(locator:any){
     this.locator=locator;
   };
   
-  public navigateTo() {
-    return browser.get('/');
-  }
-
   public async getText(elementName:string) {
    return element(this.locator).getText();
   }

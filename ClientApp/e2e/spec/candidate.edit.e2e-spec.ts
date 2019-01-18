@@ -1,12 +1,10 @@
-import { AppPage } from '../pageobject/app.po';
 import { CandidateView } from '../pageobject/pages/candidateview/candidateview.po';
+let page = require("../pageobject/app.po");
 
 let data = require("../property/data");
-let page: AppPage;
 let candidateView: CandidateView;
 
 beforeEach(() => {
-  page = new AppPage();
   candidateView = page.navigateTo("pagename");
 });
 
